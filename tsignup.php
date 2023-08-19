@@ -17,7 +17,7 @@ if (!$con){
        $query="insert into teacher_info values('$teachername','$teachermail','$teacherpass')";
        $records=mysqli_query($con,$query);
        if(mysqli_affected_rows($con))
-       header("Location: success.html");
+       header("Location: login.html");
        }
        else{
        echo "<footer><h4 align='center'>password miss match</h4></footer>";
