@@ -1,6 +1,6 @@
 <?php
 $uname="root";
-$pass="";
+$pass="Naveen@123";
 $server="localhost";
 $dbname="wt";
 $con=mysqli_connect($server,$uname,$pass,$dbname);
@@ -20,8 +20,13 @@ if (!$con){
        header("Location: success.html");
        }
        else{
-       echo "<footer><h4 align='center'>password miss match</h4></footer>";
-       header("Refresh:3,Location: newuser.html");
+       echo "<footer><h4 align='center'>Password Miss Match You will be redirected to previous page in 3 seconds</h4></footer>";
+    echo "<script>
+    setTimeout(going,3000);
+    function going(){
+        window.history.back(-1);
+    }
+    </script>";
        }
     }
 ?>

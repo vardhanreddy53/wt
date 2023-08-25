@@ -1,6 +1,6 @@
 <?php
 $uname="root";
-$pass="";
+$pass="Naveen@123";
 $server="localhost";
 $dbname="wt";
 $con=mysqli_connect($server,$uname,$pass,$dbname);
@@ -11,9 +11,8 @@ if (!$con){
     {  $teachername=$_POST["teacher_name"];
        $teachermail=$_POST["teacher_mail"];
        $teacherpass=$_POST["teacher_pass"];
-       $query="select *from teacher_info where teacher_mail='".$teachermail."'teacher_name='".$teachername."' and teacher_password='".$teacherpass."'";
-       $records=mysqli_query($con,$query);
-       if(mysqli_num_rows($records)>=1)
+       $query="select * from teacher_info where teacher_mail='".$teachermail."' and teacher_name='".$teachername."' and teacher_password='".$teacherpass."';";
+       if(mysqli_num_rows(mysqli_query($con,$query))>=1)
        header("Location: success.html");
        else
        header("Location: failure.php");
